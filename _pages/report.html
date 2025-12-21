@@ -5,6 +5,9 @@ permalink: /report/
 author_profile: true
 ---
 
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -46,12 +49,14 @@ author_profile: true
             100% { background-position: 0% 50%; }
         }
 
-        /* 玻璃拟态卡片核心样式 */
+        /* 更新：Glass Card 边框弱化
+           border 颜色从 0.6 降至 0.2，减少"框"的感觉
+        */
         .glass-card {
             background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* 更隐形的边框 */
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
             border-radius: 24px;
             transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
@@ -63,16 +68,15 @@ author_profile: true
             background: rgba(255, 255, 255, 0.8);
         }
 
-        /* 更新：Glass Header 样式调整 
-           - 降低背景白色不透明度 (0.4 -> 0.05)
-           - 增加模糊度 (10px -> 20px)
-           - 减弱边框
+        /* 更新：Header 彻底去框化
+           - 移除 border-bottom
+           - 背景透明度进一步降低
         */
         .glass-header {
-            background: rgba(255, 255, 255, 0.05); /* 极淡的白色背景 */
-            backdrop-filter: blur(20px);            /* 更强的毛玻璃模糊 */
+            background: rgba(255, 255, 255, 0.01); /* 几乎完全透明 */
+            backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 边框更隐形 */
+            border-bottom: none; /* 移除底部白线 */
         }
 
         /* 标签样式 */
@@ -107,7 +111,7 @@ author_profile: true
             padding: 4px 0;
         }
         .scholar-divider {
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.05); /* 极淡的分隔线 */
         }
 
         /* 动画 */
@@ -152,8 +156,8 @@ author_profile: true
                     <p class="text-xs text-gray-500">2024-2025 年度 · 个人述职</p>
                 </div>
             </div>
-            <!-- 更新：降低了胶囊背景的不透明度 bg-white/50 -> bg-white/20 -->
-            <div class="text-sm font-medium text-gray-500 bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
+            <!-- 更新：移除了显眼的白色边框 border-white/20 -->
+            <div class="text-sm font-medium text-gray-500 bg-white/20 px-4 py-2 rounded-full backdrop-blur-md shadow-sm">
                 马可 · 艺术学院
             </div>
         </div>
@@ -181,7 +185,8 @@ author_profile: true
                     <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
                         <i class="fa-brands fa-google text-gray-400"></i> Google Scholar
                     </div>
-                    <div class="bg-white/50 rounded-xl p-3 border border-white/60 shadow-sm">
+                    <!-- 更新：移除了内部卡片的显眼边框 border-white/60 -> border-white/20 -->
+                    <div class="bg-white/50 rounded-xl p-3 border border-white/20 shadow-sm">
                         <table class="w-full scholar-table">
                             <thead>
                                 <tr class="scholar-divider">
@@ -222,7 +227,8 @@ author_profile: true
                     <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
                         <i class="fa-solid fa-book-open text-gray-400"></i> CNKI 知网
                     </div>
-                    <div class="bg-white/50 rounded-xl p-3 border border-white/60 shadow-sm grid grid-cols-3 gap-2 text-center">
+                    <!-- 更新：移除了内部卡片的显眼边框 -->
+                    <div class="bg-white/50 rounded-xl p-3 border border-white/20 shadow-sm grid grid-cols-3 gap-2 text-center">
                         <div class="p-1">
                             <div class="text-xl font-bold text-gray-800">10</div>
                             <div class="text-[10px] text-gray-500">发文量</div>
@@ -257,7 +263,7 @@ author_profile: true
                 
                 <!-- 关键数据胶囊 -->
                 <div class="grid grid-cols-3 gap-4">
-                    <div class="bg-white/40 rounded-xl p-3 border border-white/50 flex items-center gap-3">
+                    <div class="bg-white/40 rounded-xl p-3 border border-white/20 flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
                             <i class="fa-solid fa-file-pen"></i>
                         </div>
@@ -266,7 +272,7 @@ author_profile: true
                             <div class="text-xs text-gray-500">审稿数量</div>
                         </div>
                     </div>
-                    <div class="bg-white/40 rounded-xl p-3 border border-white/50 flex items-center gap-3">
+                    <div class="bg-white/40 rounded-xl p-3 border border-white/20 flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
                             <i class="fa-solid fa-scroll"></i>
                         </div>
@@ -275,7 +281,7 @@ author_profile: true
                             <div class="text-xs text-gray-500">论文产出</div>
                         </div>
                     </div>
-                    <div class="bg-white/40 rounded-xl p-3 border border-white/50 flex items-center gap-3">
+                    <div class="bg-white/40 rounded-xl p-3 border border-white/20 flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
                             <i class="fa-solid fa-trophy"></i>
                         </div>
