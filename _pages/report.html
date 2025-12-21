@@ -49,7 +49,7 @@ layout: null
             100% { background-position: 0% 50%; }
         }
 
-        /* 更新：Glass Card 边框弱化
+        /* Glass Card 边框弱化
            border 颜色从 0.6 降至 0.2，减少"框"的感觉
         */
         .glass-card {
@@ -68,7 +68,7 @@ layout: null
             background: rgba(255, 255, 255, 0.8);
         }
 
-        /* 更新：Header 彻底去框化
+        /* Header 彻底去框化
            - 移除 border-bottom
            - 背景透明度进一步降低
         */
@@ -156,7 +156,7 @@ layout: null
                     <p class="text-xs text-gray-500">2024-2025 年度 · 个人述职</p>
                 </div>
             </div>
-            <!-- 更新：移除了显眼的白色边框 border-white/20 -->
+            <!-- 移除了显眼的白色边框 border-white/20 -->
             <div class="text-sm font-medium text-gray-500 bg-white/20 px-4 py-2 rounded-full backdrop-blur-md shadow-sm">
                 马可 · 艺术学院
             </div>
@@ -185,7 +185,7 @@ layout: null
                     <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
                         <i class="fa-brands fa-google text-gray-400"></i> Google Scholar
                     </div>
-                    <!-- 更新：移除了内部卡片的显眼边框 border-white/60 -> border-white/20 -->
+                    <!-- 移除了内部卡片的显眼边框 border-white/60 -> border-white/20 -->
                     <div class="bg-white/50 rounded-xl p-3 border border-white/20 shadow-sm">
                         <table class="w-full scholar-table">
                             <thead>
@@ -227,7 +227,7 @@ layout: null
                     <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
                         <i class="fa-solid fa-book-open text-gray-400"></i> CNKI 知网
                     </div>
-                    <!-- 更新：移除了内部卡片的显眼边框 -->
+                    <!-- 移除了内部卡片的显眼边框 -->
                     <div class="bg-white/50 rounded-xl p-3 border border-white/20 shadow-sm grid grid-cols-3 gap-2 text-center">
                         <div class="p-1">
                             <div class="text-xl font-bold text-gray-800">10</div>
@@ -413,7 +413,8 @@ layout: null
                 </div>
 
                 <!-- Project -->
-                <div class="mt-2 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
+                <!-- 背景改为纯白色 bg-white，去掉了之前的 bg-gradient-to-r 渐变 -->
+                <div class="mt-2 p-4 rounded-2xl bg-white border border-blue-100">
                     <div class="flex items-center gap-2 mb-2">
                         <i class="fa-solid fa-briefcase text-blue-600"></i>
                         <h4 class="font-bold text-blue-900">横向项目：医用创面UV喷雾器设计咨询服务</h4>
