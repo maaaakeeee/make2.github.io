@@ -63,10 +63,16 @@ author_profile: true
             background: rgba(255, 255, 255, 0.8);
         }
 
+        /* 更新：Glass Header 样式调整 
+           - 降低背景白色不透明度 (0.4 -> 0.05)
+           - 增加模糊度 (10px -> 20px)
+           - 减弱边框
+        */
         .glass-header {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05); /* 极淡的白色背景 */
+            backdrop-filter: blur(20px);            /* 更强的毛玻璃模糊 */
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 边框更隐形 */
         }
 
         /* 标签样式 */
@@ -130,7 +136,7 @@ author_profile: true
     <div class="ambient-bg"></div>
 
     <!-- 顶部导航/标题区域 -->
-    <header class="glass-header sticky top-0 z-50 px-6 py-4 mb-8">
+    <header class="glass-header sticky top-0 z-50 px-6 py-4 mb-8 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-4">
                 <!-- 头像区域 -->
@@ -146,7 +152,8 @@ author_profile: true
                     <p class="text-xs text-gray-500">2024-2025 年度 · 个人述职</p>
                 </div>
             </div>
-            <div class="text-sm font-medium text-gray-500 bg-white/50 px-4 py-2 rounded-full backdrop-blur-md border border-white/50 shadow-sm">
+            <!-- 更新：降低了胶囊背景的不透明度 bg-white/50 -> bg-white/20 -->
+            <div class="text-sm font-medium text-gray-500 bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
                 马可 · 艺术学院
             </div>
         </div>
@@ -199,7 +206,7 @@ author_profile: true
                                     <td>1</td>
                                     <td>1</td>
                                 </tr>
-                                <!-- 新增 Google Scholar 发文量 -->
+                                <!-- Google Scholar 发文量 -->
                                 <tr>
                                     <td class="text-gray-500 font-normal">发文量</td>
                                     <td>10</td>
@@ -215,13 +222,11 @@ author_profile: true
                     <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
                         <i class="fa-solid fa-book-open text-gray-400"></i> CNKI 知网
                     </div>
-                    <!-- 修改为 3 列布局以容纳引用数 -->
                     <div class="bg-white/50 rounded-xl p-3 border border-white/60 shadow-sm grid grid-cols-3 gap-2 text-center">
                         <div class="p-1">
                             <div class="text-xl font-bold text-gray-800">10</div>
                             <div class="text-[10px] text-gray-500">发文量</div>
                         </div>
-                        <!-- 新增 CNKI 引用数 -->
                         <div class="p-1 border-l border-gray-200/50">
                             <div class="text-xl font-bold text-gray-800">79</div>
                             <div class="text-[10px] text-gray-500">引用数</div>
