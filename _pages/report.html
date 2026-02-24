@@ -1,598 +1,519 @@
----
-layout: archive
-title: ""
-permalink: /report/
-author_profile: true
----
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>年度工作完成汇报</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>面向“十五五”的跨学科设计科研创新与发展</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Noto Sans SC", sans-serif;
-            background: #000;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            color: #1d1d1f;
-        }
-
-        /* 动态流动背景 */
-        .ambient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            background: radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.4), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(29, 78, 216, 0.4), transparent 25%),
-                        radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.2), transparent 50%);
-            background-size: 200% 200%;
-            animation: flow 15s ease infinite;
-            background-color: #f2f2f7;
-        }
-
-        @keyframes flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Glass Card 边框弱化
-           border 颜色从 0.6 降至 0.2，减少"框"的感觉
-        */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.2); /* 更隐形的边框 */
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
-            border-radius: 24px;
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.1);
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Header 彻底去框化
-           - 移除 border-bottom
-           - 背景透明度进一步降低
-        */
-        .glass-header {
-            background: rgba(255, 255, 255, 0.01); /* 几乎完全透明 */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: none; /* 移除底部白线 */
-        }
-
-        /* 标签样式 */
-        .ios-tag {
-            padding: 4px 10px;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .tag-blue { background: rgba(0, 122, 255, 0.1); color: #007aff; }
-        .tag-green { background: rgba(52, 199, 89, 0.1); color: #34c759; }
-        .tag-orange { background: rgba(255, 149, 0, 0.1); color: #ff9500; }
-        .tag-purple { background: rgba(175, 82, 222, 0.1); color: #af52de; }
-        .tag-red { background: rgba(255, 59, 48, 0.1); color: #ff3b30; }
-        .tag-indigo { background: rgba(79, 70, 229, 0.1); color: #4f46e5; }
-
-        /* 表格样式 (Google Scholar) */
-        .scholar-table th {
-            text-align: left;
-            font-size: 0.75rem;
-            color: #6b7280;
-            font-weight: 500;
-            padding-bottom: 4px;
-        }
-        .scholar-table td {
-            font-size: 0.875rem;
-            color: #1f2937;
-            font-weight: 600;
-            padding: 4px 0;
-        }
-        .scholar-divider {
-            border-bottom: 1px solid rgba(0,0,0,0.05); /* 极淡的分隔线 */
-        }
-
-        /* 动画 */
-        .fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
+        /* Apple System Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
+        :root {
+            --apple-bg: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --apple-secondary: #86868b;
+            --apple-blue: #0066CC;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.4);
+        }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            overflow-x: hidden; /* 允许垂直滚动 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Dynamic Blurred Background (iOS style) */
+        .bg-shapes {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #fdfdfd;
+        }
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+        .shape-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #cce0ff; animation-delay: 0s; }
+        .shape-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #e6ccff; animation-delay: -5s; }
+        .shape-3 { top: 40%; left: 30%; width: 40vw; height: 40vw; background: #ffcce6; animation-delay: -10s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 10%) scale(1.1); }
+            100% { transform: translate(-5%, -5%) scale(0.95); }
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        /* Typography overrides */
+        h1, h2, h3 { letter-spacing: -0.02em; }
+        .text-gradient {
+            background: linear-gradient(135deg, #0066CC 0%, #8A2BE2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom Scrollbar for inner elements if needed */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+
+        /* Icon Wrapper */
+        .icon-box {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,1);
         }
     </style>
 </head>
-<body class="min-h-screen pb-12">
+<body>
 
-    <!-- 动态背景 -->
-    <div class="ambient-bg"></div>
+    <!-- Animated Background -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
 
-    <!-- 顶部导航/标题区域 -->
-    <header class="glass-header sticky top-0 z-50 px-6 py-4 mb-8 transition-all duration-300">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <!-- 头像区域 -->
-                <div class="relative group">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-75 group-hover:opacity-100 transition duration-200 blur-[2px]"></div>
-                    <img src="重庆大学艺术学院马可个人照片.jpg" 
-                         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ma+Ke&background=0D8ABC&color=fff&size=128&bold=true';"
-                         alt="Avatar" 
-                         class="relative w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm bg-gray-200">
+    <!-- 垂直滚动的长网页主容器 -->
+    <main class="relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-12 flex flex-col gap-24 md:gap-32 pb-32">
+
+        <!-- Section 1: Cover -->
+        <section class="w-full min-h-[90vh] flex items-center justify-center pt-8" id="section-1">
+            <div class="glass-panel w-full max-w-5xl rounded-[2.5rem] p-12 md:p-20 text-center flex flex-col items-center justify-center relative overflow-hidden">
+                <div class="absolute top-8 left-8 flex items-center gap-3 opacity-60">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.8l7.2 14.2H4.8L12 5.8z"/></svg>
+                    <span class="text-sm font-medium tracking-widest uppercase">Chongqing University</span>
                 </div>
-                <div>
-                    <h1 class="text-xl font-bold text-gray-900 leading-tight">年度工作完成汇报</h1>
-                    <p class="text-xs text-gray-500">2024-2025 年度 · 个人述职</p>
+                
+                <span class="px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold tracking-wider mb-8 shadow-sm border border-blue-100">重庆大学艺术学院工业设计中心科研工作汇报</span>
+                
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-gradient pb-2">
+                    面向“十五五”的跨学科设计<br/>科研创新与发展
+                </h1>
+                
+                <h2 class="text-xl md:text-2xl text-gray-500 font-medium mb-12 max-w-2xl">
+                    工业设计中心科研工作规划与2026年重点计划
+                </h2>
+                
+                <div class="flex items-center gap-6 mt-8">
+                    <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-white shadow-md flex items-center justify-center text-gray-400 overflow-hidden">
+                        <svg class="w-10 h-10 mt-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-lg font-semibold">汇报人：马可</p>
+                        <p class="text-sm text-gray-500">工业设计中心副主任</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-200 w-full max-w-md flex justify-between text-sm text-gray-400 font-medium">
+                    <span>会议：学院2026年春季学期工作研讨会</span>
+                    <span>2026年2月26日</span>
                 </div>
             </div>
-            <!-- 移除了显眼的白色边框 border-white/20 -->
-            <div class="text-sm font-medium text-gray-500 bg-white/20 px-4 py-2 rounded-full backdrop-blur-md shadow-sm">
-                马可 · 艺术学院
-            </div>
-        </div>
-    </header>
+        </section>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-6">
-
-        <!-- 1. 个人概况与 Google Scholar (新布局) -->
-        <div class="col-span-1 md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-6 fade-in-up">
+        <!-- Section 2: Background -->
+        <section id="section-2" class="w-full flex flex-col pt-10">
+            <h2 class="text-3xl font-bold mb-8 pl-4 border-l-4 border-blue-500">开场与工作回顾 <span class="text-xl text-gray-400 font-normal ml-2">背景导入与开局成果</span></h2>
             
-            <!-- Google Scholar & CNKI Card -->
-            <div class="col-span-1 md:col-span-4 lg:col-span-3 glass-card p-5 flex flex-col relative overflow-hidden">
-                <!-- Decorative Icon -->
-                <div class="absolute top-0 right-0 p-4 opacity-5">
-                    <i class="fa-solid fa-chart-simple text-6xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Left Column -->
+                <div class="md:col-span-1 flex flex-col gap-6">
+                    <div class="glass-panel rounded-3xl p-6 h-full">
+                        <div class="icon-box w-12 h-12 rounded-2xl flex items-center justify-center mb-4 text-blue-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">履新简报</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">自2025年11月接手工业设计中心科研分管工作以来的基本情况梳理。梳理现状，明确方向，稳步推进跨学科融合。</p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 h-full">
+                        <h3 class="text-lg font-bold mb-4">中心科研现状分析</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded mb-1">优势</span>
+                                <p class="text-sm text-gray-600">依托重大综合性大学背景，具备向工科、信息学科交叉的天然土壤；已有高水平论文验证跨学科可行性。</p>
+                            </div>
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded mb-1">挑战</span>
+                                <p class="text-sm text-gray-600">高水平核心期刊(SSCI/SCI/CSSCI)论文集群效应需加强；国家级纵向课题申报中标率有待提升。</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-graduation-cap text-blue-600"></i>
-                    学术影响力
-                </h3>
-                
-                <!-- Google Scholar Section -->
-                <div class="mb-4">
-                    <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
-                        <i class="fa-brands fa-google text-gray-400"></i> Google Scholar
+                <!-- Right Column -->
+                <div class="md:col-span-2 glass-panel rounded-3xl p-8 flex flex-col">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-2xl">🚀</span> 2026年科研“开门红”标志性成果
+                        <span class="text-sm font-normal text-gray-400 ml-auto">验证跨学科科研潜力</span>
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Achievement 1 -->
+                        <div class="bg-white/60 rounded-2xl p-5 border border-white/80 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold whitespace-nowrap">适老与数字健康</span>
+                                <span class="text-xs font-mono text-gray-500">Digital Health (SCI&SSCI双检索, JCR Q1, IF=3.3)</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug mb-2">《城市老年用户在智能家居社交媒体语境下的社会补偿设计量表开发与验证》</h4>
+                            <p class="text-sm text-gray-500">第一作者发表</p>
+                        </div>
+                        
+                        <!-- Achievement 2 -->
+                        <div class="bg-white/60 rounded-2xl p-5 border border-white/80 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold whitespace-nowrap">文化体验与认同</span>
+                                <span class="text-xs font-mono text-gray-500">Frontiers in Psychology (SSCI, JCR Q1, IF=2.9)</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 leading-snug mb-2">《博物馆文创产品体验如何通过文化认知与认同塑造文化自信》</h4>
+                            <p class="text-sm text-gray-500">通讯作者发表</p>
+                        </div>
                     </div>
-                    <!-- 移除了内部卡片的显眼边框 border-white/60 -> border-white/20 -->
-                    <div class="bg-white/50 rounded-xl p-3 border border-white/20 shadow-sm">
-                        <table class="w-full scholar-table">
-                            <thead>
-                                <tr class="scholar-divider">
-                                    <th></th>
-                                    <th>全部</th>
-                                    <th>2020+</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-gray-500 font-normal">引用</td>
-                                    <td>37</td> 
-                                    <td>37</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-gray-500 font-normal">h-index</td>
-                                    <td>4</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-gray-500 font-normal">i10-index</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                <!-- Google Scholar 发文量 -->
-                                <tr>
-                                    <td class="text-gray-500 font-normal">发文量</td>
-                                    <td>10</td>
-                                    <td>10</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
-                <!-- CNKI Section -->
-                <div>
-                    <div class="flex items-center gap-2 mb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
-                        <i class="fa-solid fa-book-open text-gray-400"></i> CNKI 知网
+                    <div class="mt-8 pt-6 border-t border-gray-200/50">
+                        <p class="text-sm text-gray-500 italic">
+                            <span class="font-bold text-gray-700">汇报逻辑：</span>从“十五五”顶层思路出发，落实到中心科研的具体目标、举措与2026年度行动。
+                        </p>
                     </div>
-                    <!-- 移除了内部卡片的显眼边框 -->
-                    <div class="bg-white/50 rounded-xl p-3 border border-white/20 shadow-sm grid grid-cols-3 gap-2 text-center">
-                        <div class="p-1">
-                            <div class="text-xl font-bold text-gray-800">10</div>
-                            <div class="text-[10px] text-gray-500">发文量</div>
-                        </div>
-                        <div class="p-1 border-l border-gray-200/50">
-                            <div class="text-xl font-bold text-gray-800">79</div>
-                            <div class="text-[10px] text-gray-500">引用数</div>
-                        </div>
-                        <div class="p-1 border-l border-gray-200/50">
-                            <div class="text-xl font-bold text-gray-800">4</div>
-                            <div class="text-[10px] text-gray-500">h指数</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4 text-[10px] text-gray-400 text-center">
-                    Data sources: Google Scholar & CNKI
                 </div>
             </div>
+        </section>
 
-            <!-- 工作综述 (右侧) -->
-            <div class="col-span-1 md:col-span-8 lg:col-span-9 glass-card p-8 flex flex-col justify-between">
-                <div>
-                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-quote-left text-blue-500 opacity-50"></i>
-                        工作综述
-                    </h2>
-                    <p class="text-gray-700 leading-relaxed text-justify mb-6">
-                        本人严格遵守国家法律法规及学校、学院各项规章制度，落实立德树人根本任务。尽管处于入职前两年免承担课堂教学阶段，仍主动承担教学运行支撑与课程助教工作。本年度重点围绕学科建设、人才培养质量提升、科研成果产出与学院公共事务支撑开展工作，综合体现出较强的专业能力、组织执行力与学术影响力。
+        <!-- Section 3: 15th Five-Year Plan Ideas -->
+        <section id="section-3" class="w-full flex flex-col pt-10">
+            <h2 class="text-3xl font-bold mb-2 pl-4 border-l-4 border-purple-500">一、“十五五”科研发展思路</h2>
+            <p class="text-lg text-gray-500 mb-8 pl-5">核心理念：以<span class="text-purple-600 font-bold">“人本智造”</span>为核心，推动跨学科融合科研</p>
+            
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Left: Philosophy -->
+                <div class="md:w-1/3 glass-panel rounded-3xl p-8 flex flex-col justify-center">
+                    <div class="icon-box w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-purple-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">坚持问题导向与前沿交叉</h3>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            打破传统设计学边界，整合设计学、社会心理学、信息管理学与声学/行为学。
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            聚焦人类社会的未来福祉，从人的行为与认知出发，探索未来智能生活设计。
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right: Strategic Directions -->
+                <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="col-span-full mb-2">
+                        <h3 class="text-xl font-bold">锚定核心战略与特色前沿方向</h3>
+                    </div>
+                    
+                    <div class="bg-white/70 rounded-2xl p-5 shadow-sm hover:scale-[1.02] transition-transform">
+                        <div class="text-2xl mb-2">🤖</div>
+                        <h4 class="font-bold text-gray-800 mb-1">人工智能与AIGC</h4>
+                        <p class="text-xs text-gray-500">研究人机共创与设计行为演变。</p>
+                    </div>
+                    
+                    <div class="bg-white/70 rounded-2xl p-5 shadow-sm hover:scale-[1.02] transition-transform">
+                        <div class="text-2xl mb-2">🥽</div>
+                        <h4 class="font-bold text-gray-800 mb-1">先进制造与智能交互</h4>
+                        <p class="text-xs text-gray-500">面向智能座舱、混合现实(MR)场景的可用性与体验设计。</p>
+                    </div>
+                    
+                    <div class="bg-white/70 rounded-2xl p-5 shadow-sm hover:scale-[1.02] transition-transform">
+                        <div class="text-2xl mb-2">🧓</div>
+                        <h4 class="font-bold text-gray-800 mb-1">银发经济与健康福祉</h4>
+                        <p class="text-xs text-gray-500">探索老年人群技术接受模型与康养装备/机器人设计。</p>
+                    </div>
+                    
+                    <div class="bg-white/70 rounded-2xl p-5 shadow-sm hover:scale-[1.02] transition-transform">
+                        <div class="text-2xl mb-2">🏮</div>
+                        <h4 class="font-bold text-gray-800 mb-1">地域文化传承与数字体验</h4>
+                        <p class="text-xs text-gray-500">探索传统匠作智慧向现代智造体验的转译与认同建构。</p>
+                    </div>
+                    
+                    <div class="col-span-full bg-gradient-to-r from-blue-50/80 to-purple-50/80 rounded-2xl p-5 shadow-sm hover:scale-[1.01] transition-transform">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                            <div class="text-3xl">🎵</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">多感官交互与健康疗愈</h4>
+                                <p class="text-xs text-gray-500">开展情感化声音交互与听觉健康的一体化前沿研究。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Goals & Tasks -->
+        <section id="section-4" class="w-full flex flex-col pt-10">
+            <h2 class="text-3xl font-bold mb-2 pl-4 border-l-4 border-blue-600">二、主要目标与重点任务 <span class="text-lg font-normal text-gray-400">（十五五期间）</span></h2>
+            <p class="text-lg text-gray-600 mb-6 pl-5 font-medium">核心目标：打造西部领先、国内一流的“智能交互与体验设计”科研高地</p>
+            
+            <div class="flex flex-col gap-6">
+                <!-- Quantitative Goals -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="glass-panel rounded-2xl p-6 flex items-center gap-6">
+                        <div class="text-5xl font-bold text-blue-600">3<span class="text-2xl">篇</span></div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">高水平论文 (年均)</h3>
+                            <p class="text-xs text-gray-500 mt-1">含SCI/SSCI一二区、CSSCI及顶会</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel rounded-2xl p-6 flex items-center gap-6">
+                        <div class="text-5xl font-bold text-purple-600">1-2<span class="text-2xl">项</span></div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">国家级/教育部课题 (年均)</h3>
+                            <p class="text-xs text-gray-500 mt-1">国自科/国社科/国家艺术基金等，省部级稳定产出</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Tasks -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                    <!-- Task 1 -->
+                    <div class="bg-white/80 backdrop-blur-md rounded-3xl p-6 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+                        <span class="text-blue-600 font-bold text-sm tracking-wider uppercase mb-2 block">任务一：突破高规格科研项目</span>
+                        <p class="text-sm text-gray-600 mb-4">在AIGC设计、智能座舱等切入点基础上，重点孵化两大集群：</p>
+                        
+                        <div class="space-y-3 mt-auto">
+                            <div class="bg-gray-50/80 p-4 rounded-xl border border-gray-100 hover:bg-white transition-colors">
+                                <span class="text-xs font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded mb-1 inline-block">人文社科类突破</span>
+                                <h4 class="font-bold text-sm text-gray-800 leading-tight">“从传统匠作智慧到现代智造体验：巴蜀文化产品的体验转译与认同建构研究”</h4>
+                            </div>
+                            <div class="bg-gray-50/80 p-4 rounded-xl border border-gray-100 hover:bg-white transition-colors">
+                                <span class="text-xs font-bold text-cyan-600 bg-cyan-100 px-2 py-0.5 rounded mb-1 inline-block">自然科学/交叉学科突破</span>
+                                <h4 class="font-bold text-sm text-gray-800 leading-tight">“情感化Chime音生成与声音健康一体化研究”</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 2 -->
+                    <div class="bg-white/80 backdrop-blur-md rounded-3xl p-6 border border-gray-100 shadow-sm relative overflow-hidden flex flex-col">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full mix-blend-multiply filter blur-2xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+                        <span class="text-purple-600 font-bold text-sm tracking-wider uppercase mb-2 block">任务二：构建高水平论文产出矩阵</span>
+                        
+                        <div class="mt-4 space-y-5">
+                            <div>
+                                <h4 class="font-bold text-gray-800 flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    核心支持体系
+                                </h4>
+                                <p class="text-sm text-gray-600 pl-6 mt-1">建立从数据采集、实验心理学分析到论文撰写的标准化流程。</p>
+                            </div>
+                            <div class="bg-purple-50/50 p-4 rounded-xl border border-purple-100 mt-auto">
+                                <h4 class="font-bold text-gray-800 flex items-center gap-2 mb-2">
+                                    <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    高效方法抓手：SEM应用
+                                </h4>
+                                <p class="text-sm text-gray-600">重点推广“结构方程模型（SEM）”在设计学研究中的应用。将其作为在用户体验、设计行为等方向上，高效、稳定产出高质量SSCI/SCI论文的核心突破口。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Key Measures 1 -->
+        <section id="section-5" class="w-full flex flex-col pt-10">
+            <h2 class="text-3xl font-bold mb-8 pl-4 border-l-4 border-green-500">三、关键举措（1）<span class="text-xl font-normal text-gray-400 ml-3 block sm:inline mt-2 sm:mt-0">科研赋能与平台建设</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel rounded-3xl p-8 transform transition hover:-translate-y-2 hover:shadow-xl">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                        🔬
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">搭建“行为与认知设计”实验平台</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        整合现有的可用性测试、眼动仪、生理多导仪及声学测试设备，建设规范化的行为、认知与多感官交互实验室，为高水平论文提供实验数据支撑。
                     </p>
                 </div>
-                
-                <!-- 关键数据胶囊 -->
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="bg-white/40 rounded-xl p-3 border border-white/20 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                            <i class="fa-solid fa-file-pen"></i>
-                        </div>
-                        <div>
-                            <div class="text-xl font-bold text-gray-800">10+</div>
-                            <div class="text-xs text-gray-500">审稿数量</div>
-                        </div>
-                    </div>
-                    <div class="bg-white/40 rounded-xl p-3 border border-white/20 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
-                            <i class="fa-solid fa-scroll"></i>
-                        </div>
-                        <div>
-                            <div class="text-xl font-bold text-gray-800">4</div>
-                            <div class="text-xs text-gray-500">论文产出</div>
-                        </div>
-                    </div>
-                    <div class="bg-white/40 rounded-xl p-3 border border-white/20 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                        <div>
-                            <div class="text-xl font-bold text-gray-800">Q1</div>
-                            <div class="text-xs text-gray-500">最高分区</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- 2. 教学建设 (左侧 5列) -->
-        <div class="col-span-1 md:col-span-5 glass-card p-6 fade-in-up delay-1 flex flex-col">
-            <div class="flex items-center gap-3 mb-6 border-b border-gray-200/50 pb-4">
-                <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">
-                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                <!-- Card 2 -->
+                <div class="glass-panel rounded-3xl p-8 transform transition hover:-translate-y-2 hover:shadow-xl">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                        🤝
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">建立跨院系联合攻关机制</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        主动对接计算机学院、自动化学院、公管学院等，采取<span class="font-bold text-blue-600">“设计+算法/工程”双PI制</span>，联合申报跨学科重点研发计划。
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900">教学与人才培养</h3>
+
+                <!-- Card 3 -->
+                <div class="glass-panel rounded-3xl p-8 transform transition hover:-translate-y-2 hover:shadow-xl">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                        🏭
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">深化产品服务系统(PSS)产学研转化</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        将数字化产品服务系统的理论研究与重庆本地智造企业（如长安汽车等）的横向课题结合，实现<span class="font-bold text-orange-600">“以横养纵，以纵促横”</span>。
+                    </p>
+                </div>
             </div>
+        </section>
+
+        <!-- Section 6: Key Measures 2 -->
+        <section id="section-6" class="w-full flex flex-col pt-10">
+            <h2 class="text-3xl font-bold mb-8 pl-4 border-l-4 border-indigo-500">三、关键举措（2）<span class="text-xl font-normal text-gray-400 ml-3 block sm:inline mt-2 sm:mt-0">论文发表与学术生态培育</span></h2>
             
-            <div class="space-y-6 flex-1">
-                <!-- item 1 -->
-                <div class="relative pl-6 border-l-2 border-orange-200">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-orange-400 ring-4 ring-white/50"></div>
-                    <h4 class="font-bold text-gray-800">课程助教</h4>
-                    <p class="text-sm text-gray-500 mb-2">《产品交互与服务设计》</p>
-                    <div class="bg-white/40 rounded-lg p-3 text-sm text-gray-600">
-                        <ul class="list-disc list-inside space-y-1">
-                            <li>课堂协助与组织</li>
-                            <li>作业与过程性考核支撑</li>
-                            <li>学生学习反馈与答疑</li>
-                        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white/70 backdrop-blur-xl border border-white/50 shadow-sm rounded-3xl p-8 h-full flex flex-col">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shrink-0">1</span>
+                        定期举办“Design & Research”学术工作坊
+                    </h3>
+                    <div class="bg-indigo-50/50 rounded-xl p-4 text-sm text-gray-600 flex-1">
+                        每月开展内部 Paper Reading 与实验方法培训（如 SPSS/AMOS/SmartPLS分析、实验心理学范式），提升年轻教师与研究生的科研基本功。
                     </div>
                 </div>
 
-                <!-- item 2 -->
-                <div class="relative pl-6 border-l-2 border-orange-200">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-orange-400 ring-4 ring-white/50"></div>
-                    <h4 class="font-bold text-gray-800">设计学和设计专业研究生培养方案修订</h4>
-                    <p class="text-xs text-gray-400 mb-2">独立完成调研报告 (Word & PPT)</p>
-                    <div class="flex items-center gap-3 bg-blue-50/50 p-3 rounded-lg border border-blue-100 mb-2">
-                        <i class="fa-regular fa-calendar-check text-blue-500"></i>
-                        <span class="text-sm font-medium text-blue-800">2025年7月1日</span>
-                        <span class="text-xs text-blue-600 ml-auto">代孙老师汇报</span>
+                <!-- Card 2 -->
+                <div class="bg-white/70 backdrop-blur-xl border border-white/50 shadow-sm rounded-3xl p-8 h-full flex flex-col">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shrink-0">2</span>
+                        实施“论文预印本与内审”制度
+                    </h3>
+                    <div class="bg-indigo-50/50 rounded-xl p-4 text-sm text-gray-600 flex-1">
+                        针对冲击顶刊的论文，中心组织内部专家或邀请外部大牛进行预审修改，严格把关质量，显著提高高水平期刊的录用率。
                     </div>
                 </div>
 
-                <!-- item 3 -->
-                <div class="relative pl-6 border-l-2 border-orange-200">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 ring-4 ring-white/50"></div>
-                    <h4 class="font-bold text-gray-800">学科评估支撑</h4>
-                    <p class="text-sm text-gray-600">完成设计学硕士学位授权点基本状态信息填报系统数据填报。</p>
+                <!-- Card 3 -->
+                <div class="bg-white/70 backdrop-blur-xl border border-white/50 shadow-sm rounded-3xl p-8 h-full flex flex-col">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shrink-0">3</span>
+                        构建科研激励与学术共同体
+                    </h3>
+                    <div class="bg-indigo-50/50 rounded-xl p-4 text-sm text-gray-600 flex-1">
+                        鼓励并资助师生参与 CHI、IASDR 等国际顶级学术会议，扩大重庆大学工业设计中心的国际学术声誉与影响力。
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- 3. 科研任务 (右侧 7列) -->
-        <div class="col-span-1 md:col-span-7 glass-card p-6 fade-in-up delay-2">
-            <div class="flex items-center justify-between mb-6 border-b border-gray-200/50 pb-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center">
-                        <i class="fa-solid fa-flask text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900">科研成果</h3>
-                </div>
-                <span class="ios-tag tag-purple">高质量导向</span>
-            </div>
-
-            <div class="grid grid-cols-1 gap-4">
-                <!-- Paper 1 -->
-                <div class="bg-white/50 rounded-2xl p-4 border border-white hover:bg-white/80 transition-colors">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="ios-tag tag-blue">第一作者</span>
-                        <div class="flex gap-1">
-                            <span class="ios-tag tag-green">SCI</span>
-                            <span class="ios-tag tag-green">SSCI</span>
-                            <span class="ios-tag tag-red">JCR Q1</span>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-1 text-sm leading-snug">Development and Validation of Social Compensation Design Scale for Urban Older Users in the Context of Smart-home Social Media</h4>
-                    <p class="text-xs text-gray-600 font-medium mt-1">Digital Health</p>
-                    <p class="text-sm text-gray-500 mb-2 mt-1">Status: <span class="text-green-600 font-semibold">已录用 (Accepted & Forthcoming)</span></p>
-                    <div class="flex items-center gap-2 text-xs text-gray-400">
-                        <i class="fa-solid fa-chart-line"></i> JIF = 3.3
-                    </div>
-                </div>
-                
-    <!-- Paper New Added -->
-                 <div class="bg-white/50 rounded-2xl p-4 border border-white hover:bg-white/80 transition-colors">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="ios-tag tag-indigo">通讯作者</span>
-                        <div class="flex gap-1">
-                            <span class="ios-tag tag-green">SSCI</span>
-                            <span class="ios-tag tag-red">JCR Q1</span>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-1 text-sm leading-snug">How Museum-Based Creative-Product Experiences Shape Cultural Confidence via Cultural Cognition and Cultural Identity</h4>
-                    <p class="text-xs text-gray-600 font-medium mt-1">Frontiers in Psychology</p>
-                    <p class="text-sm text-gray-500 mb-2 mt-1">Status: <span class="text-indigo-600 font-semibold">已录用(Accepted & Forthcoming)</span></p>
-                    <div class="flex items-center gap-2 text-xs text-gray-400">
-                        <i class="fa-solid fa-chart-line"></i> JIF = 2.9
-                    </div>
-                </div>
-                
-                <!-- Paper 2 -->
-                <div class="bg-white/50 rounded-2xl p-4 border border-white hover:bg-white/80 transition-colors">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="ios-tag tag-blue">第一作者</span>
-                        <span class="ios-tag tag-orange">EI 检索</span>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-1 text-sm leading-snug">An Extended TAM with Social Compensation Design for Chinese Older Adults’ General Acceptance of Smart-Home Social Media</h4>
-                    <p class="text-xs text-gray-600 font-medium mt-1">HCI International 2026</p>
-                    <p class="text-sm text-gray-500 mt-1">国际会议论文 (已录用)</p>
-                </div>
-
-                <!-- Paper 3 -->
-                <div class="bg-white/50 rounded-2xl p-4 border border-white hover:bg-white/80 transition-colors">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="ios-tag tag-purple">合作发表</span>
-                        <div class="flex gap-1">
-                            <span class="ios-tag tag-green">SCI</span>
-                            <span class="ios-tag tag-orange">JCR Q2</span>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-1 text-sm">Furniture Product Eco-Design Based on Life Cycle Assessment</h4>
-                    <p class="text-xs text-gray-500 italic mb-2">Yang Dongfang, Zhou Min, Liang Shuang, Ma K.</p>
-                    <p class="text-xs text-gray-600">BioResources (2025) 20: 6765–6778</p>
-                </div>
-
-                <!-- Project -->
-                <!-- 背景改为纯白色 bg-white，去掉了之前的 bg-gradient-to-r 渐变 -->
-                <div class="mt-2 p-4 rounded-2xl bg-white border border-blue-100">
-                    <div class="flex items-center gap-2 mb-2">
-                        <i class="fa-solid fa-briefcase text-blue-600"></i>
-                        <h4 class="font-bold text-blue-900">横向项目：医用创面UV喷雾器设计咨询服务</h4>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-sm mt-3">
-                        <div>
-                            <p class="text-xs text-gray-400">立项金额</p>
-                            <p class="font-bold text-gray-800">7.6 万元</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-400">合同期</p>
-                            <p class="font-bold text-gray-800">2025.08 - 2025.12</p>
-                        </div>
-                    </div>
-                    <div class="w-full bg-blue-200 rounded-full h-1.5 mt-3">
-                        <div class="bg-blue-600 h-1.5 rounded-full" style="width: 80%"></div>
-                    </div>
-                    <p class="text-xs text-right text-blue-600 mt-1">按计划推进中</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. 公共事务 (左侧 4列) -->
-        <div class="col-span-1 md:col-span-4 glass-card p-6 fade-in-up delay-3">
-            <div class="flex items-center gap-3 mb-6 border-b border-gray-200/50 pb-4">
-                <div class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center">
-                    <i class="fa-solid fa-users-gear text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900">公共事务</h3>
-            </div>
+        <!-- Section 7: 2026 Plan -->
+        <section id="section-7" class="w-full max-w-5xl mx-auto flex flex-col pt-10">
+            <h2 class="text-3xl font-bold mb-14 text-center">四、2026年重点工作计划 <span class="text-gray-400 font-normal">年度落地</span></h2>
             
-            <div class="bg-green-50/50 rounded-lg p-3 mb-4 text-sm text-green-800 border border-green-100 italic text-center">
-                “关键材料有人写、关键环节有人顶、关键节点不掉链”
-            </div>
-
-            <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                    <div class="mt-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 text-xs">
-                        <i class="fa-solid fa-globe"></i>
+            <div class="flex flex-col gap-16">
+                
+                <!-- 上半年 -->
+                <div class="glass-panel rounded-[2rem] p-8 md:p-10 relative mt-6">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap">
+                        上半年（春季学期：攻坚期）
                     </div>
-                    <span class="text-sm text-gray-700">推动学院加入 <strong>LeNS China</strong> <br><span class="text-xs text-gray-500">The Learning Network on Sustainability-China<br>(中国可持续设计学习网络)</span></span>
-                </li>
-                <!-- 新增：前锋论坛汇报 -->
-                <li class="flex items-start gap-3">
-                    <div class="mt-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 text-xs">
-                        <i class="fa-solid fa-microphone-lines"></i>
+                    
+                    <div class="mt-8 space-y-10 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-blue-200 before:to-purple-200">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/80 p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="font-bold text-blue-600 mb-1">2月 - 3月</div>
+                                <h4 class="font-bold text-gray-800 mb-2">纵向项目申报冲刺</h4>
+                                <p class="text-sm text-gray-600">全力冲刺国家社科基金、国家自科基金、教育部人文社科等纵向项目申报。<br/><span class="text-xs text-gray-400 mt-2 block">目前已进入打磨冲刺阶段，重点关注巴蜀文化、Chime音等核心课题。</span></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 2 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-purple-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                                <span class="text-white text-xs font-bold">Q2</span>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/80 p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="font-bold text-purple-600 mb-1">4月 - 5月</div>
+                                <h4 class="font-bold text-gray-800 mb-2">AIGC与未来设计专项启动</h4>
+                                <p class="text-sm text-gray-600">启动中心“AIGC与未来设计教育/设计行为”专项研究，组织相关师生开展基础数据收集。<br/><span class="text-xs font-semibold text-purple-700 mt-2 block">目标年底前产出2-3篇高质量SSCI/SCI论文。</span></p>
+                            </div>
+                        </div>
                     </div>
-                    <span class="text-sm text-gray-700">代表设计学系参加第一期前锋论坛<br><span class="text-xs text-gray-500">汇报：《涵育时代新人-跨部门协同育人的实践与思考》</span></span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <div class="mt-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 text-xs">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <span class="text-sm text-gray-700"><strong>学科秘书</strong> & <strong>工业设计中心副主任</strong></span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <div class="mt-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 text-xs">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <span class="text-sm text-gray-700">主笔设计学系“十五五”规划材料</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <div class="mt-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 text-xs">
-                        <i class="fa-solid fa-file-invoice"></i>
-                    </div>
-                    <span class="text-sm text-gray-700">撰写2024设计学/设计专业年度报告</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <div class="mt-1 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 text-xs">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                    </div>
-                    <span class="text-sm text-gray-700">主笔专业合并调研报告</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- 5. 学术审稿 (右侧 8列) -->
-        <div class="col-span-1 md:col-span-8 glass-card p-6 fade-in-up delay-4">
-            <div class="flex items-center justify-between mb-6 border-b border-gray-200/50 pb-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
-                        <i class="fa-solid fa-glasses text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900">学术审稿服务</h3>
                 </div>
-                <div class="text-right">
-                    <p class="text-sm text-gray-500">全年受邀审稿</p>
-                    <p class="font-bold text-lg text-gray-800">10+ 篇</p>
-                </div>
-            </div>
 
-            <!-- JCR Q1 Section -->
-            <div class="mb-2">
-                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 ml-1">JCR Q1 (High Impact)</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    <!-- Card -->
-                    <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">J. Innov. & Knowledge</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 15.5</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
+                <!-- 下半年 -->
+                <div class="glass-panel rounded-[2rem] p-8 md:p-10 relative mt-6">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-6 py-2 rounded-full font-bold shadow-lg whitespace-nowrap">
+                        下半年（秋季学期：收获与布局期）
                     </div>
-                     <!-- Card -->
-                     <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">Int. J. Human-Computer Interaction</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 4.9</span>
+                    
+                    <div class="mt-8 space-y-10 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-purple-200 before:to-orange-200">
+                        
+                        <!-- Timeline Item 3 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-orange-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                                <span class="text-white text-xs font-bold">Q3</span>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/80 p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="font-bold text-orange-600 mb-1">9月 - 10月</div>
+                                <h4 class="font-bold text-gray-800 mb-2">复盘与省部级课题筹备</h4>
+                                <p class="text-sm text-gray-600">针对上半年未中的课题进行全面复盘与修改打磨；同时筹备下一年度重庆市教委、科委等省部级课题申报。</p>
+                            </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
-                    </div>
-                     <!-- Card -->
-                     <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">BMC Public Health</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 3.6</span>
+                        
+                        <!-- Timeline Item 4 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-green-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/80 p-5 rounded-2xl shadow-sm border border-gray-100">
+                                <div class="font-bold text-green-600 mb-1">12月</div>
+                                <h4 class="font-bold text-gray-800 mb-2">年度盘点与科研之星评选</h4>
+                                <p class="text-sm text-gray-600">年度科研成果（论文、专利、课题）整体盘点，制定2027年科研任务书，评选中心年度科研之星，营造良好学术氛围。</p>
+                            </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
-                    </div>
-                     <!-- Card -->
-                     <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">Digital Health</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 3.3</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
-                    </div>
-                     <!-- Card -->
-                     <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">Psych. Research & Behav. Mgmt</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 3.2</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
-                    </div>
-                     <!-- Card -->
-                     <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">Frontiers in Psychology</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 2.9</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
-                    </div>
-                     <!-- Card -->
-                     <div class="bg-white/40 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">SAGE Open</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 2.0</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q1</div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- JCR Q2 Section -->
-            <div class="mt-4">
-                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 ml-1">JCR Q2</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    <div class="bg-white/30 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">Behaviour & Info. Tech</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 3.1</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q2</div>
-                    </div>
-                    <div class="bg-white/30 p-3 rounded-xl border border-white/60 flex items-center justify-between">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-xs text-gray-800 leading-tight">PLOS ONE</span>
-                            <span class="text-[10px] text-gray-500 mt-1">IF: 2.6</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">Q2</div>
-                    </div>
+        <!-- Section 8: Conclusion -->
+        <section id="section-8" class="w-full max-w-4xl mx-auto mt-16 flex items-center justify-center">
+            <div class="w-full glass-panel rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 -z-10"></div>
+                
+                <h2 class="text-3xl font-bold mb-10 text-gray-800">结语与展望</h2>
+                
+                <div class="mb-10 text-left bg-white/60 p-6 rounded-2xl border border-white">
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        <span class="font-bold text-blue-600">总结：</span>通过跨学科的融合，设计能够解决更加复杂和多元化的问题。工业设计中心将立足重庆大学，从人的行为与认知的核心出发，<strong class="text-gray-900">设计并创造未来的智能生活。</strong>
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        <span class="font-bold text-orange-600">表态：</span>作为中心科研负责人，我将全力以赴做好<span class="font-bold border-b-2 border-orange-300">“服务者”</span>与<span class="font-bold border-b-2 border-orange-300">“冲锋者”</span>，和各位同仁一起，为学院“十五五”科研目标的达成贡献力量！
+                    </p>
                 </div>
+
+                <div class="text-2xl font-bold text-gradient mb-4">
+                    感谢各位领导、同仁的倾听！
+                </div>
+                <p class="text-gray-500 font-medium">欢迎批评指正</p>
+                
+                <div class="mt-12 w-16 h-1 bg-gray-300 rounded-full mx-auto"></div>
             </div>
-        </div>
+        </section>
 
     </main>
-    
-    <footer class="text-center text-white/50 text-xs py-8">
-        Designed for Performance Review 2024-2025
-    </footer>
-
 </body>
 </html>
